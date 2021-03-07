@@ -1,7 +1,16 @@
 require_relative 'boot'
 
+# Web framework
 require "rails"
+
+# Controller
 require "action_controller/railtie"
+
+# ::HashWithIndifferentAccess
+require "active_support"
+
+# HTTP Client
+require "net/http"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -21,5 +30,8 @@ module BillionDollarApp
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Autoload module
+    config.eager_load_paths += ["#{config.root}/services"]
   end
 end

@@ -12,6 +12,7 @@ gem 'puma', '~> 4.1'
 # Application boot
 gem 'bootsnap', '>= 1.4.2', require: false
 
+#TDD
 group :test do
   gem 'rspec-rails'
 end
